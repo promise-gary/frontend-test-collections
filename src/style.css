@@ -1,4 +1,298 @@
+:root {
+  font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  color: #1c2430;
+  background: linear-gradient(145deg, #f6f8fb 0%, #edf2f8 100%);
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  margin-bottom: 16px;
+}
+
+.app-header h1 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.app-header p {
+  margin-top: 8px;
+  color: #5c6778;
+}
+
+.notice {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.notice.success {
+  background: #e7f7ef;
+  color: #0e6c3d;
+}
+
+.notice.error {
+  background: #ffecec;
+  color: #9b1d1d;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.1fr 1.25fr;
+  gap: 14px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #d9e0ea;
+  border-radius: 14px;
+  padding: 14px;
+  min-height: 72vh;
+  overflow: auto;
+}
+
+.panel-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.mt {
+  margin-top: 16px;
+}
+
+.helper {
+  color: #5c6778;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.input,
+.textarea,
+select {
+  width: 100%;
+  border: 1px solid #ced7e3;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.button {
+  border: 1px solid #c6d0dc;
+  background: #f7f9fc;
+  color: #253346;
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: #eef3f9;
+}
+
+.button.strong {
+  background: #1f6feb;
+  border-color: #1f6feb;
+  color: #fff;
+}
+
+.button.strong:hover {
+  background: #155bc3;
+}
+
+.button.subtle {
+  background: #fff;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.danger-text {
+  border: 0;
+  background: transparent;
+  color: #c92a2a;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.link-button {
+  border: 0;
+  background: #f4f7fb;
+  color: #1f2b3a;
+  padding: 8px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.link-button.active {
+  background: #dbe9ff;
+  color: #1b4f9b;
+}
+
+.detail {
+  margin-top: 14px;
+}
+
+.detail-title {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.question-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.question-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.question-category {
+  color: #2669c7;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.dropzone {
+  border: 2px dashed #b9c8dc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin: 12px 0;
+  background: #f9fbff;
+}
+
+.dropzone.dragging {
+  border-color: #1f6feb;
+  background: #ebf2ff;
+}
+
+.drop-text {
+  margin-bottom: 10px;
+  color: #4f5f75;
+}
+
+.hidden {
+  display: none;
+}
+
+.preview {
+  margin-top: 10px;
+}
+
+.preview-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border: 1px solid #dce4ef;
+  border-radius: 10px;
+  margin: 8px 0;
+  background: #fff;
+}
+
+.group {
+  margin-top: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px;
+  background: #fafcff;
+}
+
+.group-title {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.draft-card {
+  border: 1px solid #e3e9f2;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.empty {
+  color: #5d6a7d;
+  border: 1px dashed #c8d3e2;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.check {
+  font-size: 13px;
+  color: #3f4d61;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 1160px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    min-height: auto;
+  }
 }
